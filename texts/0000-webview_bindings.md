@@ -1,8 +1,8 @@
-# RFC #001 Webview
+# RFC #0000 Webview
 
 | Status        | Proposed       |
 :-------------- | ---------------------------------------------------- |
-| **RFC #**     | [001](https://github.com/tauri-apps/governance-and-guidance/pull/NNN)
+| **RFC #**     | [0000](https://github.com/tauri-apps/governance-and-guidance/pull/1)
 | **Authors** | Daniel Thompson-Yvetot (denjell@tauri.studio), Tensor Programming (tensor@tauri.studio) |
 | **External Sponsor** | Erlend (e.soghe@gmail.com) |
 | **Updated**   | 2020-03-10                                           |
