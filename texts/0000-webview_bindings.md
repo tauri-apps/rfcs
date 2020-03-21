@@ -2,10 +2,10 @@
 
 | Status        | Proposed       |
 :-------------- | ---------------------------------------------------- |
-| **RFC #**     | [0000](https://github.com/tauri-apps/governance-and-guidance/pull/1) |
+| **RFC #** | [0000](https://github.com/tauri-apps/governance-and-guidance/pull/1) |
 | **Authors** | Daniel Thompson-Yvetot (denjell@tauri.studio), Tensor Programming (tensor@tauri.studio) |
 | **External Sponsor** | Erlend (e.soghe@gmail.com) |
-| **Updated**   | 2020-03-10 |
+| **Updated** | 2020-03-10 |
 
 
 ## Objective
@@ -62,7 +62,7 @@ Maintaining some kind of influence over the bindings and the headers needed for 
 Since this will mostly concern developers of the library itself, we should anticipate enhancing our own documentation in any case.
 
 ### Compatibility
-There may be API changes, but it will fall in the scope of ALPHA.  For information regarding the API changes, refer to the webview repository's [readme](https://github.com/zserge/webview).  We anticipate that MSHtml will not continue to be supported in the ecosystem in favor of Edge and Edge/Chromium.
+There may be API changes, but it will fall in the scope of ALPHA.  For information regarding the API changes, refer to the webview repository's [readme](https://github.com/zserge/webview).  
 
 ### User Impact
 We anticipate only forward-changes with additionally exposed APIs.
@@ -71,5 +71,3 @@ We anticipate only forward-changes with additionally exposed APIs.
 What do you think? Is it going to be better for Tauri to hard fork and go its own way - or be part of the community and work together?
 
 Would you be more willing to contribute to the webview organization or the Tauri organization? (Or doesn't it matter?)
-
-
