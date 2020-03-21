@@ -2,10 +2,10 @@
 
 | Status        | Proposed       |
 :-------------- | ---------------------------------------------------- |
-| **RFC #**     | [0000](https://github.com/tauri-apps/governance-and-guidance/pull/1)
+| **RFC #**     | [0000](https://github.com/tauri-apps/governance-and-guidance/pull/1) |
 | **Authors** | Daniel Thompson-Yvetot (denjell@tauri.studio), Tensor Programming (tensor@tauri.studio) |
 | **External Sponsor** | Erlend (e.soghe@gmail.com) |
-| **Updated**   | 2020-03-10                                           |
+| **Updated**   | 2020-03-10 |
 
 
 ## Objective
@@ -31,7 +31,7 @@ Since we plan to release our Beta at some point in the next 4 months, we absolut
 We will create generic mappings to the rust bindings, this will allow developers to more easily switch to other forks of webview and potentially other rendering engines entirely.
 
 ### Ideal Situation
-We become co-maintainers of the official webview/webview-rs bindings together with @boscop and consume official monolithic webview-x type headers directly from webview/webview
+We become co-maintainers of the official webview/webview-rs bindings together with @boscop and consume official monolithic webview-x type headers directly from webview/webview.
 
 ### Acceptable Situation
 We become co-maintainers of webview/webview-rs and consume official monolithic webview-x type headers directly from webview/webview.
