@@ -30,14 +30,8 @@ Since we plan to release our Beta at some point in the next 4 months, we absolut
 ### In any Case
 We will create generic mappings to the rust bindings, this will allow developers to more easily switch to other forks of webview and potentially other rendering engines entirely.
 
-### Ideal Situation
-We become co-maintainers of the official webview/webview-rs bindings together with @boscop and consume official monolithic webview-x type headers directly from webview/webview.
-
-### Acceptable Situation
-We become co-maintainers of webview/webview-rs and consume official monolithic webview-x type headers directly from webview/webview.
-
-### Backup Plan
-We consume webview-x type headers and bind them to tauri-apps/tauri-webview, essentially hard-forking. Contributions back upstream and manual merges from upstream possible, but will require additional effort (and attention).
+### Solution
+We would like to pool our efforts with the OSS community. Our preferance was to take part in the creation of an organization along side @boscop. This is looking to be less likely at this point in time, so we will play it safe and create our own abstraction layer over the various webview backends. This will allow us and our users to pick and chose which is most ideal per platform, as well as make such changes non-breaking and open us up to patching in backends.
 
 ### Alternatives Considered
 - Writing our own bindings.
