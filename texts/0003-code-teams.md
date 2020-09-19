@@ -22,9 +22,9 @@ As decisions are made, the team should create tasks to take the decision to comp
 
 Secondary responsibilities would be review the PRs and enable the docs to make it easy for someone to come in and contribute to that portion on the code. ("Docs" doesn't necessarily need to be something on tauri.studio.)
 
-To address the inflow and outflow of members, we will list all team members and "open positions". Each team should have 3+ members, 3 of which being the primary members. The primary members should have the most expectation of responsibility. The primary members are not lifetime, static positions. There is an expectation that they change with some frequency and not be a "reward" to my earned.
+To address the inflow and outflow of members, we will list all team members and "open positions". Each team should have 3+ members, 3 of which being the primary members. The primary members should have the most expectation of responsibility. The primary members are not lifetime, static positions. There is an expectation that they change with some frequency and not be a "reward" to be earned.
 
-Members may step back as an "alumnus" member. All roles operate in the open so this is doesn't reduce access in any manner. Rather the intent is to signal that the time is not available for them to give real attention to the project. A way that one could temporarily or permanently step back without any guilt.
+Members may step back as an "alumnus" member. All roles operate in the open so this is doesn't reduce access in any manner. Rather, the intent is to signal that the time is not available for them to give real attention to the project. A way that one could temporarily or permanently step back without any guilt.
 
 ### Breakdown
 #### Teams
@@ -43,4 +43,4 @@ More hands should help spread the load and improve the velocity of the docs and 
 
 ### Security Impact
 #### What changes will this bring, if any, to the security model of CI, developers and users?
-This should allow us to bring in more people to help out. More eyes covering every corner soups help, and relieving some of the managerial duties from core should allow more attention to security.
+This should allow us to bring in more people to help out. More eyes covering every corner will result in more bugs being caught, and relieving some of the managerial duties from core should allow more attention to security.
