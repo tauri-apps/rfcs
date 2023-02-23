@@ -1,0 +1,35 @@
+title: "[Proposal] "
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: "Describe the proposal in one sentence."
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: "Why are we doing this? What different use cases does it impact/support? What is the expected outcome? What will Tauri What will users of Tauri (whether Tauri core developers, developers using Tauri or Tauri app users) gain from this?"
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: |
+        Go into as much detail as you'd like about how this should work. Some points to consider including (but not required) are:
+        - Solution, alternatives considered, performance implications
+        - Impact (engineering, performance, users, security, platform and environment)
+        - Compatibility, dependencies
+        - Examples
+    validations:
+      required: true
+  - type: textarea
+    id: questions
+    attributes:
+      label: Questions and Discussion Topics
+      description: "Are there open questions or topics that you'd like to discuss?"
+    validations:
+      required: true
