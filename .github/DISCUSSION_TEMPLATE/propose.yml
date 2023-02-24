@@ -7,19 +7,19 @@ body:
       value: |
         <!-- You're welcome to use any format you would like. We've pre-populated some suggested sections below to help you get started -->
         
-        ### Summary
+        "### Summary"
         
         Describe the proposal in one sentence to make it easier for viewers to understand.
         
-        ### Motivation
+        "### Motivation"
         
         What is the reason behind this proposal? What's the expected outcome?
         
-        ### Proposal
+        "### Proposal"
         
         Go into as much or as little detail as you'd like about how this should work. You can include solutions, alternatives, examples, implications or anything else that you've thought of.
         
-        ### Open Questions
+        "### Open Questions"
         
         If you have questions or points that you'd like to pose for more in-depth discussion feel free to put them here.
     validations:
