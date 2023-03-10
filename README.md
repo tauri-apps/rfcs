@@ -6,7 +6,7 @@ This repo is dedicated to the Tauri RFC (Request for Comment) process. When ther
 
 Not everything necessarily requires an RFC. Sometimes you may wish to have a discussion before writing a full RFC or to simply submit an idea. Here's when you could use a [Feature Request](https://github.com/tauri-apps/tauri/issues/new?assignees=&labels=type%3A+feature+request&template=feature_request.yml&title=%5Bfeat%5D+) to start off the conversation.
 
-Be sure to check through the [existing feature reqeusts in the Tauri repo](https://github.com/tauri-apps/tauri/labels/type%3A%20feature%20request) as your idea may already be there and would be a good place to add your input into!
+Be sure to check through the [existing feature requests in the Tauri repo](https://github.com/tauri-apps/tauri/labels/type%3A%20feature%20request) as your idea may already be there and would be a good place to add your input into!
 
 ## RFC Process
 
