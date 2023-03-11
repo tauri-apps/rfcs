@@ -10,7 +10,7 @@ Be sure to check through the [existing feature requests in the Tauri repo](https
 
 ## RFC Process
 
-1) Create an RFC Pull Request by following the steps below.
+1) Create an RFC Pull Request by following the steps in the [Creating an RFC](#creating-an-rfc) section below.
 2) Once a PR is opened in this repo then the review process begins. This will be left open for a minimum of 2 weeks to allow comment.
 3) After this time period a member of the Tauri Working Group will handle closing the RFC. If accepted, the RFC will be assigned a number and a tracking issue opened on the appropriate repo.
 
