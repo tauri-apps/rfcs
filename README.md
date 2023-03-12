@@ -13,7 +13,7 @@ Be sure to check through the [existing feature requests in the Tauri repo](https
 1) Create an RFC Pull Request by following the steps in the [Creating an RFC](#creating-an-rfc) section below.
 2) Once a PR is opened in this repo then the review process begins. This will be left open for a minimum of 2 weeks to allow comment.
 3) After this time period a member of the Tauri Working Group will handle closing the RFC. If accepted, the RFC will be assigned a number.
-4) If an implimentation is already underway then the respective PR will be added to the RFC to track. If no implimentation is started then a tracking issue in the respective repo will be created and added to the RFC to track.
+4) If an implementation is already underway then the respective PR will be added to the RFC to track. If no implementation is started then a tracking issue in the respective repo will be created and added to the RFC to track.
 
 An accepted RFC does not necessairly mean that Tauri will be actively working on implimentation, but instead signals that the the details in the RFC align with the overall goals of Tauri. The tracking issue or implimentation PR are where the status of an RFC's implementation (in implimentation, open to someone contributing, etc.) can be found.
 
