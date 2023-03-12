@@ -15,7 +15,7 @@ Be sure to check through the [existing feature requests in the Tauri repo](https
 3) After this time period a member of the Tauri Working Group will handle closing the RFC. If accepted, the RFC will be assigned a number.
 4) If an implementation is already underway then the respective PR will be added to the RFC to track. If no implementation is started then a tracking issue in the respective repo will be created and added to the RFC to track.
 
-An accepted RFC does not necessairly mean that Tauri will be actively working on implimentation, but instead signals that the the details in the RFC align with the overall goals of Tauri. The tracking issue or implimentation PR are where the status of an RFC's implementation (in implimentation, open to someone contributing, etc.) can be found.
+An accepted RFC does not necessarily mean that Tauri will be actively working on implementation, but instead signals that the the details in the RFC align with the overall goals of Tauri. The tracking issue or implementation PR are where the status of an RFC's implementation (in implementation, open to someone contributing, etc.) can be found.
 
 ## Creating an RFC
 
