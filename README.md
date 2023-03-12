@@ -23,6 +23,6 @@ Once you have enough information to begin an RFC you can follow this process to 
 
 1) **Fork this repo**
 2) **Copy the template** Move your copy of `template.md` into the `texts` folder, naming it in the scheme of `0000-feature.md`. Note: the number is literal and will be adjusted just before merging.
-3) **Fill the template out** Replace all relevant sections with explanations. Put care into the details, as it will serve as a reference through the development process.
+3) **Fill out the template** Replace all relevant sections with explanations. Put care into the details, as it will serve as a reference through the development process.
 4) **Open a PR** After opening a PR, the RFC is open for comment. Discussion should happen in the comments of the PR. RFCs that are "invalid" (don't follow the format/proceedure, violate CoC, or are otherwise unable to be used) may be closed immediately.
 5) **Merged into the repo** The final stage of an RFC that signals it is accepted is it being merged into this repo. If a PR for an implementation is already submitted then it will be used to track the status from there. Otherwise a tracking issue will be created in the respective repo to capture the implementation status.
