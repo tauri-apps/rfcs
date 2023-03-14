@@ -31,7 +31,7 @@ The section should return to the examples given in the previous section, and exp
 ## Platform Considerations
 
 Tauri works across a wide variety of platforms (Operating Systems, Architectures, Hardware Configurations). Please explain:
-- If applicable, how this feature interacts with different platforms and wether some platforms introduce special behavior.
+- If applicable, how this feature interacts with different platforms and whether some platforms introduce special behavior.
 - If this feature can only be supported on a subset of platforms, explain why.
 
 ## Security Considerations
