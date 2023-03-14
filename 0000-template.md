@@ -19,7 +19,7 @@ Why are we doing this? What use cases does it support? What will developers, end
   
 # Reference-level explanation
 
-The technical portion of the RFC. Please explain in gory detail:
+The technical portion of the RFC. Please explain in detail:
 
 - How the feature interacts with other features.
 - That it is reasonably clear how the feature would be implemented.
