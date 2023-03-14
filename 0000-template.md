@@ -52,6 +52,7 @@ How does this impact community libraries, tools and other work? Does this invali
 # Drawbacks
 
 Why should we *not* do this?
+What are the limitations of this approach?
 
 # Rationale and alternatives
 
