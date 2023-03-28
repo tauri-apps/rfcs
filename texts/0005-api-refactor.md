@@ -64,6 +64,9 @@ Here is the complete list of APIs we need to rewrite as plugins. Some of them ar
 | file-system      | core    | ✓       | ✓      | x                     | x                   |
 | window           | core    | ✓       | ✓      | x                     | x                   |
 | event            | core    | ✓       | ✓      | x                     | x                   |
+| tauri            | core    | ✓       | ✓      | x                     | x                   |
+| app              | core    | ✓       | ✓      | x                     | x                   |
+| testing (mocks)  | regular | ✓       | ✓      | x                     | x                   |
 | clipboard        | regular | ✓       | ✓      | ✓                     | ?                   |
 | dialog           | regular | ✓       | ✓      | ✓                     | ?                   |
 | http             | regular | ✓       | ✓      | x                     | x                   |
