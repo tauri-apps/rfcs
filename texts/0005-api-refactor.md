@@ -69,7 +69,6 @@ Here is the complete list of APIs we need to rewrite as plugins. Some of them ar
 | http             | regular | ✓       | ✓      | x                     | x                   |
 | notification     | regular | ✓       | ✓      | ✓                     | ?                   |
 | shell            | regular | ✓       | ✓      | ✓                     | ?                   |
-| dialog           | regular | ✓       | ✓      | ✓                     | ?                   |
 | operating-system | regular | ✓       | ✓      | x                     | x                   |
 | cli              | regular | ✓       | x      |                       |                     |
 | process          | regular | ✓       | x      |                       |                     |
