@@ -85,6 +85,8 @@ There is 2 APIs this RFC is proposing:
 
 - While Linux (X11) appears in both groups, it is recommended to be used through the gtk window handle instead of the raw X11 handle.
 - Linux (Wayland) doesn't allow creating a raw `GdkWaylandWindow` from a raw wayland window, so it can only be part of the "Gtk handle" group.
+- On Linux, which ever API you choose to use, the developer has to ensure that they initialize gtk through `gtk::init` and
+  have a gtk event loop running on the thread, either alone or with another loop like X11 event loop using `gtk::main_iteration_do` 
 
 ## Community Considerations
 
