@@ -46,7 +46,7 @@ This group could leverage the `raw-window-handle` crate; this includes macOS, Wi
     });
     let webview = WebView::new(raw_handle);  
     ```
-  - Using raw X11 NSWindow:
+  - Using raw X11:
     ```rs
     let window = XCreateWindow(/* args */);
     let raw_handle =  RawWindowHandle::Xlib(XlibWindowHandle::new(window);
