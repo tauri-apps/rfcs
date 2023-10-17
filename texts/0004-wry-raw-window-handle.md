@@ -12,7 +12,7 @@ Make WRY agnostic of the windowing library used and accept a raw-window-handle o
 This has been requested in [tauri-apps/wry#677](https://github.com/tauri-apps/wry/issues/677) a long time ago and at work at CrabNebula,
 we have been contracted to research and develop an integration of wry and wgpu/bevy. We had a successful results and it aligned with [tauri-apps/wry#677](https://github.com/tauri-apps/wry/issues/677)
 so we did an initial implemention of this RFC for Windows which can be found here https://github.com/crabnebula-dev/wry/commits/feat/embedded-webview and we think
-it is a good oprtunity to upstream work.
+it is a good oprtunity to upstream this work.
 
 # Guide-level explanation
 There is two groups of window handles we will need to take in order to support the current platforms we support:
@@ -23,34 +23,34 @@ This group could leverage the `raw-window-handle` crate; this includes macOS, Wi
     implements [`raw_window_handle::HasWindowHandle`](https://docs.rs/raw-window-handle/latest/raw_window_handle/trait.HasWindowHandle.html) trait
     (or previous versions of `raw-window-handle` crate):
     ```rs
-    let window = Window::new(&evl);
-    let raw_handle = window.raw_window_handle();
-    let webview = WebView::new(raw_handle);  
+    let window = Window::new(&evl); // Window implements HasWindowHandle
+    let webview = WebView::new(&window);  
     ```
     
   - Using raw win32:
     ```rs
     let hwnd = CreateWindowExW(/* args */);
-    let raw_handle =  RawWindowHandle::Win32(Win32WindowHandle {
-      hwnd,
-      hinstance: None,
-    });
-    let webview = WebView::new(raw_handle);  
+    let webview = WebView::new_hwnd(hwnd);  
     ```
     
   - Using raw AppKit NSWindow:
     ```rs
     let ns_window = msg_send![/* args */];
-    let raw_handle =  RawWindowHandle::Win32(AppKitWindowHandle  {
-      ns_view: ns_window.contentView(),
-    });
-    let webview = WebView::new(raw_handle);  
+    let webview = WebView::new_ns_view(ns_window.contentView());  
     ```
-  - Using raw X11:
+    
+  - Using raw X11 (not recommended):
     ```rs
+    // must initialize gtk first
+    gtk::init().unwrap(); 
     let window = XCreateWindow(/* args */);
-    let raw_handle =  RawWindowHandle::Xlib(XlibWindowHandle::new(window);
-    let webview = WebView::new(raw_handle);  
+    let webview = WebView::new_x11(window);
+
+    // and in event loop, you need to advance the gtk loop as well
+    loop {
+      // 1. handle x11 event loop
+      // 1. handle gtk event loop through `gtk::main_iteration_do`
+    }  
     ```
 
 #### Gtk handle:
@@ -60,6 +60,7 @@ This group leverages the gtk types, includes Linux platform only (X11 and Waylan
     let gtk_window = gtk::ApplicationWindow::new(/* args */);
     let webview = WebView::new_gtk(&gtk_window);  
     ```
+    
   - Using tao:
     ```rs
     let window = Window::new(/* args */);
@@ -71,19 +72,25 @@ This group leverages the gtk types, includes Linux platform only (X11 and Waylan
 # Reference-level explanation
 
 There is 2 APIs this RFC is proposing:
-- `Webview::new(parent_raw_window_handle)` initializes the Webview as a child in the passed window handle, this allows for multiple webviews in
+- `WebView::new(parent_raw_window_handle)` initializes the Webview as a child in the passed window handle, this allows for multiple webviews in
   the same window handle passed. 
   - Supported platforms: Windows, macOS and Linux (X11)
   - Supports `webview.set_position()/webview.set_size()` to change the position and size of the webview child inside the parent later on.
-- `Webview::new_in(raw_window_handle)/Webview::new_in_gtk(gtk_handle)` (current behavior)
+- `WebView::new_in(raw_window_handle)/Webview::new_in_gtk(gtk_handle)` (current behavior)
   initializes the webview directly in the passed window handle.
   - Supported platforms: Windows, macOS and Linux (X11 & Wyaland)
   - Does NOT support `webview.set_position()` as managing the size and position of the webview should be done by sizing or changing the position of
     the window handle passed.
+And there will also be equivalent methods that is specific to each platform, in case someone don't want to
+go through `raw-window-handle` crate:
+- `WebView::new_hwnd(hwnd)` and `WebView::new_in_hwnd`: Windows Only
+- `WebView::new_x11(hwnd)` and `WebView::new_in_x11`: Linux(X11) Only
+- `WebView::new_ns_view(hwnd)` and `WebView::new_in_ns_view`: macOS Only
 
 ## Platform Considerations
 
-- While Linux (X11) appears in both groups, it is recommended to be used through the gtk window handle instead of the raw X11 handle.
+- While Linux (X11) appears in both groups, it is recommended to be used through the gtk window handle instead of the raw X11 handle because
+  to use the raw x11 handle, you'd still need to initialize gtk and advance its event loop alongside the x11 loop.
 - Linux (Wayland) doesn't allow creating a raw `GdkWaylandWindow` from a raw wayland window, so it can only be part of the "Gtk handle" group.
 - On Linux, which ever API you choose to use, the developer has to ensure that they initialize gtk through `gtk::init` and
   have a gtk event loop running on the thread, either alone or with another loop like X11 event loop using `gtk::main_iteration_do` 
