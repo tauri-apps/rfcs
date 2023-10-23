@@ -72,20 +72,21 @@ This group leverages the gtk types, includes Linux platform only (X11 and Waylan
 # Reference-level explanation
 
 There is 2 APIs this RFC is proposing:
-- `WebView::new(parent_raw_window_handle)` initializes the Webview as a child in the passed window handle, this allows for multiple webviews in
-  the same window handle passed. 
-  - Supported platforms: Windows, macOS and Linux (X11)
-  - Supports `webview.set_position()/webview.set_size()` to change the position and size of the webview child inside the parent later on.
-- `WebView::new_in(raw_window_handle)/Webview::new_in_gtk(gtk_handle)` (current behavior)
-  initializes the webview directly in the passed window handle.
+- `WebView::new(raw_window_handle)/Webview::new_gtk(gtk_wdiget_handle)` (current behavior)
+  initializes the webview directly in the passed handle.
   - Supported platforms: Windows, macOS and Linux (X11 & Wyaland)
   - Does NOT support `webview.set_position()` as managing the size and position of the webview should be done by sizing or changing the position of
-    the window handle passed.
-And there will also be equivalent methods that is specific to each platform, in case someone don't want to
+    the handle passed in.
+- `WebView::new_as_child(parent_raw_window_handle)` initializes the Webview as a child in the passed window handle, this allows for multiple webviews in
+  the same window handle passed. 
+  - Supported platforms: Windows, macOS and Linux (X11 Only)
+  - Supports `webview.set_position()/webview.set_size()` to change the position and size of the webview child inside the parent.
+
+There will also be equivalent methods that is specific to each platform, in case someone don't want to
 go through `raw-window-handle` crate:
-- `WebView::new_hwnd(hwnd)` and `WebView::new_in_hwnd`: Windows Only
-- `WebView::new_x11(hwnd)` and `WebView::new_in_x11`: Linux(X11) Only
-- `WebView::new_ns_view(hwnd)` and `WebView::new_in_ns_view`: macOS Only
+- `WebView::new_hwnd(hwnd)` and `WebView::new_as_child_hwnd`: Windows Only
+- `WebView::new_x11(hwnd)` and `WebView::new_as_child_x11`: Linux(X11) Only
+- `WebView::new_ns_view(hwnd)` and `WebView::new_as_child_ns_view`: macOS Only
 
 ## Platform Considerations
 
