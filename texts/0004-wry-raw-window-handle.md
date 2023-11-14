@@ -1,6 +1,7 @@
 - Feature Name: wry-raw-window-handle
 - Start Date: 16-10-2023
 - RFC PR: [tauri-apps/rfcs#12](https://github.com/tauri-apps/rfcs/pull/12)
+- Implementation PR: https://github.com/tauri-apps/wry/pull/1041
 - Tracking Issue: [tauri-apps/wry#677](https://github.com/tauri-apps/wry/issues/677)
 
 # Summary
