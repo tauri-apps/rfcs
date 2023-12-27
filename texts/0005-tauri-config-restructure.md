@@ -24,7 +24,7 @@ These inconsistencies will make it harder to add new fields to the config.
 - Move `build > withGlobalTauri` to the root object.
 - Move `tauri > pattern` to `security > pattern` and make it accept a simple string for `brownfield`.
 - Move `tauri > cli` and `tauri > update` fields to `plugins > cli` and `plugins > update` as they are plugins now.
-- Rename `build > distDir` to `build > assets` or just `build > dist`.
+- Rename `build > distDir` to `frontendDist` to explicitly set the intent of the option.
 - Rename `build > devPath` to `build > devUrl` and only accept urls,
   if users don't have a devServer, they should removve this field and only set `build > dist` which will make the CLI
   start its built-in devServer or fallback to embed the assets if `--no-dev-server` is used.
@@ -111,7 +111,7 @@ These inconsistencies will make it harder to add new fields to the config.
     "beforeDevCommand": "pnpm dev",
     "beforeBuildCommand": "pnpm build",
     "devUrl": "http://localhost:8080/",
-    "assets": "../src" // or ["../src/index.html", "../src/main.js"] if need to include specific files
+    "frontendDist": "../src" // or ["../src/index.html", "../src/main.js"] if need to include specific files
   },
   "withGlobalTauri": true,
   "macosPrivateApi": false,
@@ -167,4 +167,4 @@ This will be a breaking change and so users will need to restructure the config 
 
 # Drawbacks
 
-None at the moment, as breaking changes will be covered by `tauri migrate` command.
+Almost all current Tauri users will need to migrate to the new breaking changes but it is better to do this now in a major release.
