@@ -9,7 +9,7 @@ Restructuring the `tauri.conf.json` for more simplicity, consistency and clarity
 
 # Motivation
 
-The current `tauri.conf.jsong` has a bunch of objects that don't necessarily follow a rule that could reason why they exist there and thus makes it awkward to figure out where to add new fields
+The current `tauri.conf.json` has a bunch of objects that don't necessarily follow a rule that could reason why they exist there and thus makes it awkward to figure out where to add new fields
 for example `tauri > bundle` object is a configuration for the CLI, why does it exist inside `tauri` object, another example is the `plugins` object which is a tauri feature, why does it exist outside of `tauri` object? 
 These inconsistencies will make it harder to add new fields to the config. 
 
