@@ -136,7 +136,7 @@ These inconsistencies will make it harder to add new fields to the config.
     "cli": {},
     "updater": {
       "pubkey": "",
-      "endpoints": [""http://localhost:8080/update.json""],
+      "endpoints": ["http://localhost:8080/update.json"],
       "windows": {
         "installMode": "basicUi"
       }
