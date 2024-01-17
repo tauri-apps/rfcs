@@ -15,16 +15,16 @@ These inconsistencies will make it harder to add new fields to the config.
 
 # Guide-level explanation
 
-- Unpack `tauri` object to the root object.
 - Unpack `package` fields to the root object.
+- Rename `tauri` object to `app`.
 - Move `tauri > bundle > identifier` to the root object as it is used by other places in tauri other than bundling.
 - Remove `bundle > updater` as the only useful key it has, is `pubkey` field and that should be moveed to `plugin > updater > pubkey`.
   This will require changes in the CLI to only sign the bundles when `TAURI_SIGNING_PRIVATE_KEY` key is set .
   This will also fix a huge DX when using `tauri-plugin-updater` and you endup having to configure updater-related configs once in `bundle > updater` and `plugin > updater`.
-- Move `build > withGlobalTauri` to the root object.
-- Move `tauri > pattern` to `security > pattern` and make it accept a simple string for `brownfield`.
+- Move `build > withGlobalTauri` to the new `app > withGlobaltauri` object.
+- Move `tauri > pattern` to `app > security > pattern` and make it accept a simple string for `brownfield`.
 - Move `tauri > cli` and `tauri > update` fields to `plugins > cli` and `plugins > update` as they are plugins now.
-- Rename `build > distDir` to `frontendDist` to explicitly set the intent of the option.
+- Rename `build > distDir` to `build > frontendDist` to explicitly set the intent of the option.
 - Rename `build > devPath` to `build > devUrl` and only accept urls,
   if users don't have a devServer, they should remove this field and only set `build > frontendDist` which will make the CLI
   start its built-in devServer or fallback to embed the assets if `--no-dev-server` is used.
@@ -113,32 +113,34 @@ These inconsistencies will make it harder to add new fields to the config.
     "devUrl": "http://localhost:8080/",
     "frontendDist": "../src" // or ["../src/index.html", "../src/main.js"] if need to include specific files
   },
-  "withGlobalTauri": true,
-  "macosPrivateApi": false,
-  "windows": [
-    {
-      "title": "tauri-app",
-      "width": 800,
-      "height": 600
-    }
-  ],
-  "trayIcon": {
-    "iconPath": "./path/to/icon"
-  },
-  "allowlist": { // soon to be replaced with permissions and cababilities
-    "all": true
-  },
-  "security": {
-    "pattern": "brownfield",
-    "csp": null
-  },
-  "plugins": {
-    "cli": {},
-    "updater": {
-      "pubkey": "",
-      "endpoints": ["http://localhost:8080/update.json"],
-      "windows": {
-        "installMode": "basicUi"
+  "app": {
+    "windows": [
+      {
+        "title": "tauri-app",
+        "width": 800,
+        "height": 600
+      }
+    ],
+    "withGlobalTauri": true,
+    "macosPrivateApi": false,
+    "trayIcon": {
+      "iconPath": "./path/to/icon"
+    },
+    "allowlist": { // soon to be replaced with permissions and cababilities
+      "all": true
+    },
+    "security": {
+      "pattern": "brownfield",
+      "csp": null
+    },
+    "plugins": {
+      "cli": {},
+      "updater": {
+        "pubkey": "",
+        "endpoints": ["http://localhost:8080/update.json"],
+        "windows": {
+          "installMode": "basicUi"
+        }
       }
     }
   },
