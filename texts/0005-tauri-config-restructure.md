@@ -26,7 +26,7 @@ These inconsistencies will make it harder to add new fields to the config.
 - Move `tauri > cli` and `tauri > update` fields to `plugins > cli` and `plugins > update` as they are plugins now.
 - Rename `build > distDir` to `frontendDist` to explicitly set the intent of the option.
 - Rename `build > devPath` to `build > devUrl` and only accept urls,
-  if users don't have a devServer, they should removve this field and only set `build > dist` which will make the CLI
+  if users don't have a devServer, they should remove this field and only set `build > frontendDist` which will make the CLI
   start its built-in devServer or fallback to embed the assets if `--no-dev-server` is used.
 
 <table>
