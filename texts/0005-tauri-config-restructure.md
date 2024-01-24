@@ -1,5 +1,5 @@
 - Feature Name: tauri_config_restructure
-- Start Date: 2023-13-20
+- Start Date: 2023-12-20
 - RFC PR: [tauri-apps/rfcs#13](https://github.com/tauri-apps/rfcs/pull/13)
 - Tracking Issue: 
 
