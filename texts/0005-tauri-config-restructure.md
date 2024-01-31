@@ -28,6 +28,7 @@ These inconsistencies will make it harder to add new fields to the config.
 - Rename `build > devPath` to `build > devUrl` and only accept urls,
   if users don't have a devServer, they should remove this field and only set `build > frontendDist` which will make the CLI
   start its built-in devServer or fallback to embed the assets if `--no-dev-server` is used.
+- Move `tauri > bundle` to root object.
 
 <table>
 <thead>
