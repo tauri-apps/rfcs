@@ -22,7 +22,7 @@ These inconsistencies will make it harder to add new fields to the config.
   This will require changes in the CLI to only sign the bundles when `TAURI_SIGNING_PRIVATE_KEY` key is set .
   This will also fix a huge DX when using `tauri-plugin-updater` and you endup having to configure updater-related configs once in `bundle > updater` and `plugin > updater`.
 - Move `build > withGlobalTauri` to the new `app > withGlobaltauri` object.
-- Move `tauri > pattern` to `app > security > pattern` and make it accept a simple string for `brownfield`.
+- Move `tauri > pattern` to `app > security > pattern`.
 - Move `tauri > cli` and `tauri > update` fields to `plugins > cli` and `plugins > update` as they are plugins now.
 - Rename `build > distDir` to `build > frontendDist` to explicitly set the intent of the option.
 - Rename `build > devPath` to `build > devUrl` and only accept urls,
